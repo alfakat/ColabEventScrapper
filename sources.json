@@ -1,7 +1,7 @@
 [
     {
-        "url": "https://www.haifa.muni.il/event_cat/family/",
+        "url": "https://www.meetup.com/",
         "tag": "div",
-        "class_name": "place-archive-item-inner is-event-archive-item"
+        "class_name": "flex min-h-screen flex-col"
     }
 ]
