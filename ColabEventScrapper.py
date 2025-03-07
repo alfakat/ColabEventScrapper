@@ -23,7 +23,6 @@ def run_main_script():
 
 def main():
     setup_repo()
-    create_email_settings()
     run_main_script()
 
 if __name__ == "__main__":
