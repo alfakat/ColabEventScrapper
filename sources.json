@@ -1,12 +1,12 @@
 [
     {
-        "url": "",
+        "url": "https://www.haifa.muni.il/event_cat/family/",
         "tag": "div",
-        "class_name": ""
+        "class_name": "place-archive-item-inner is-event-archive-item"
     },
     {
-        "url": "",
+        "url": "https://www.hma.org.il/ילדים_ומשפחה",
         "tag": "div",
-        "class_name": ""
+        "class_name": "cat-items cat-items-exhibitions"
     }
 ]
