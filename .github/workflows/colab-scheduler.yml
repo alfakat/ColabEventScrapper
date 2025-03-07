@@ -1,4 +1,4 @@
-name: Run Colab Every 3 Days
+name: Run Python Script Every 3 Days
 
 on:
   schedule:
@@ -6,17 +6,24 @@ on:
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
-  run_colab:
+  run_script:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Run Google Colab Notebook
-        uses: educational-websites/colab-batch@v1
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          notebook: "ColabEventScrapper.ipynb" 
-          parameters: |
-            RECIPIENT_EMAIL=${{ secrets.RECIPIENT_EMAIL }}
-            SENDER_EMAIL=${{ secrets.SENDER_EMAIL }}
-            SENDER_PASSWORD=${{ secrets.SMTP_SERVER }}
+          python-version: '3.9' 
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Python Script
+        env:
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+        run: python ColabEventScrapper.py
