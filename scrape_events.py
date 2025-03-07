@@ -24,7 +24,7 @@ def scrape_events(sources: str):
                 parse_event(event, events)
 
         except Exception as e:
-            print(f"Error fetching events from {url}: {e}")
+            print(f"Error fetching events from {url} {e}")
 
     return events
 
